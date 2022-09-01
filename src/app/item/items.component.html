@@ -1,11 +1,41 @@
 <ActionBar title="My App"> </ActionBar>
+<StackLayout>
+  <WebView
+    height="100"
+    width="100%"
+    loaded="onWebViewLoaded"
+    id="myWebView"
+    backgroundColor="#ffb3c1"
+    src="https://www.google.com/"
+  ></WebView>
 
-<GridLayout>
-  <ListView [items]="items">
-    <ng-template let-item="item">
-      <StackLayout [nsRouterLink]="['/item', item.id]">
-        <Label [text]="item.name"></Label>
-      </StackLayout>
-    </ng-template>
-  </ListView>
-</GridLayout>
+  <SearchBar
+    id="bar"
+    hint="click here to search.."
+    color="#590d22"
+    backgroundColor="#e0afa0"
+  ></SearchBar>
+  <Switch checked="false" loaded="onSwitchLoaded"></Switch>
+  <Switch checked="false" loaded="onSwitchLoaded"></Switch>
+  <Switch checked="false" loaded="onSwitchLoaded"></Switch>
+
+  <Slider
+    value="20"
+    minValue="0"
+    maxValue="50"
+    loaded="onSliderLoaded"
+    backgroundColor="red"
+    color="yellow"
+    orientation="horizontal"
+  ></Slider>
+
+  <progress
+    margin="10"
+    value="90"
+    min="0"
+    maxValue="180"
+    backgroundColor="Red"
+    color="Green"
+  ></progress>
+  <ActivityIndicator busy="true" color="grey" width="60"> </ActivityIndicator>
+</StackLayout>
